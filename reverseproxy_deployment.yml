@@ -15,9 +15,10 @@ spec:
         service: reverseproxy
     spec:
       containers:
-      - image: rdevcd2020/reverseproxy:v3
+      - image: rdevcd2020/reverseproxy:v4
         name: reverseproxy
         imagePullPolicy: Always               
         ports:
-        - containerPort: 8080
+        - name: http
+          containerPort: 8080
       restartPolicy: Always
