@@ -15,9 +15,16 @@ spec:
         service: reverseproxy
     spec:
       containers:
-      - image: rdevcd2020/reverseproxy:v4
+      - image: rdevcd2020/reverseproxy:v5
         name: reverseproxy
-        imagePullPolicy: Always               
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"                     
         ports:
         - name: http
           containerPort: 8080
